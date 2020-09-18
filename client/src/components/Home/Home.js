@@ -65,26 +65,29 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   actionArea: {
+		margin: '1rem',
     [theme.breakpoints.down("md")]: {
       height: "100%",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
       paddingLeft: "1rem",
-      paddingRight: "1rem",
+			paddingRight: "1rem",
+			margin: '0',
       background: "rgba(0,0,0,0.2)",
       color: "#fff",
     },
   },
   linkGen: {
-    "&>div": {
-      width: "60%",
-    },
     "&>button": {
-      width: "30%",
+      width: "40%",
+      margin: "0 10px",
     },
     [theme.breakpoints.down("md")]: {
-      display: "flex",
+			display: "flex",
+			'& p': {
+				color: '#fff !important'
+			},
       flexDirection: "column",
       justifyContent: "center",
       "&>*": {
@@ -117,7 +120,7 @@ const Home = () => {
           </Button>
         </Toolbar>
       </AppBar>
-      <Container className={classes.container}>
+      <Container className={classes.container} maxWidth="xl">
         <Box
           display="flex"
           justifyContent="flex-start"
@@ -142,16 +145,25 @@ const Home = () => {
               className={classes.linkGen}
             >
               <TextField
-                defaultValue="Create a room and start all the fun"
+                label="Room Code"
                 fullWidth
+                variant="outlined"
+                placeholder="Enter Room Code or Paste the Link"
                 margin="normal"
                 style={{
                   padding: ".5rem 0",
                   marginRight: "1rem",
                 }}
-                InputProps={{ readOnly: true }}
               />
               <Button variant="contained" size="large" color="primary">
+                Join Room
+              </Button>
+							<Typography variant="body1" style={{color: '#aaa'}} > OR </Typography>
+              <Button
+                variant="contained"
+                size="large"
+                style={{ background: "#ff5e15" }}
+              >
                 Create Room
               </Button>
             </Box>
