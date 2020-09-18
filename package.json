@@ -1,18 +1,24 @@
 {
   "name": "chess_n_chat",
   "version": "1.0.0",
-  "description": "",
+  "description": "A video chatting app where friends can join in rooms and play chess while chatting over video and text formats.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon app",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
   }
 }
