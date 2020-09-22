@@ -11,6 +11,10 @@ const server = app.listen(PORT, () => console.log(`Server started on PORT: ${POR
 
 const io = socketio(server);
 
-io.on('connection', socket => {
-  console.log(socket.id);
-})
+io.on('connection', (socket) => {
+  let roomId = socket.handshake.query.roomId; 
+  socket.join(roomId, ()   => {
+    console.log(socket.id + ' joined ' + roomId);
+		socket.to(roomId).emit('JOIN-ROOM', `Joined room ${roomId}`);
+	});
+});

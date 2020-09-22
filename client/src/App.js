@@ -1,21 +1,27 @@
 import React from 'react';
 import { CssBaseline } from '@material-ui/core';
+import { Switch, Route } from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faChessBoard, faPlusSquare, faChess } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
 
 // Component Imports
 import Home from './components/Home/Home';
+import Playground from './components/Playground/Playground';
+import SocketProvider from './context/socket-context';
 
-library.add(faChessBoard, far, faPlusSquare, faChess);
+library.add(faChessBoard, faPlusSquare, faChess);
 
-function App() {
+const App = () => {
 	return (
-		<CssBaseline>
-				<Home />
-		</CssBaseline>
+		<SocketProvider>
+			<CssBaseline />
+			<Switch>
+				<Route path="/" exact component={Home} />
+				<Route path="/:roomId" component={Playground} />
+			</Switch>
+		</SocketProvider>
 	);
-}
+};
 
 export default App;
