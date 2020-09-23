@@ -1,0 +1,18 @@
+User Schema:
+{
+  roomId,
+  name,
+  admin,
+}
+
+Chess
+
+Chess Schema:
+{
+  fen
+  player: {
+    socketId,
+    name
+  }
+}
+
