@@ -26,7 +26,7 @@ import Short from 'shortid';
 import ChessImg from '../../assets/home/chess1.jpg';
 import ChessImgMobile from '../../assets/home/chess2.jpg';
 
-import { SocketContext } from '../../context/socket-context';
+import { SocketContext } from '../../context/socket/socket-context';
 
 const useStyles = makeStyles((theme) => ({
 	navbarbg: {

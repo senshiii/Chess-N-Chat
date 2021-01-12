@@ -10,7 +10,7 @@ import { faChessBoard, faPlusSquare, faChess } from '@fortawesome/free-solid-svg
 import Home from './components/Home/Home';
 import Join from './components/Join Page/Join';
 import Playground from './components/Playground/Playground';
-import SocketProvider from './context/socket-context';
+import SocketProvider from './context/socket/socket-context';
 
 library.add(faChessBoard, faPlusSquare, faChess);
 
@@ -21,7 +21,7 @@ const theme = createMuiTheme({
 		},
 		secondary: {
 			main: '#1976d2'
-		}
+		},
 	}
 });
 
